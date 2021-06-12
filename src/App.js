@@ -6,17 +6,6 @@ import FeedbackOptions from "./components/FeedbackOptions";
 import Notification from "./components/Notification";
 
 class App extends Component {
-  // static defaultProps = {
-  //   initialGood: 0,
-  //   initialNeutral: 0,
-  //   initialBad: 0,
-  // };
-  // state = {
-  //   good: this.props.initialGood,
-  //   neutral: this.props.initialNeutral,
-  //   bad: this.props.initialBad,
-  // };
-
   state = {
     good: 0,
     neutral: 0,
@@ -29,6 +18,7 @@ class App extends Component {
       [name]: prevState[name] + 1,
     }));
   };
+
   countTotalFeedback() {
     const { good, neutral, bad } = this.state;
     const total = good + neutral + bad;
@@ -43,9 +33,6 @@ class App extends Component {
   }
   render() {
     const { good, neutral, bad } = this.state;
-    // const { good } = this.state;
-    // const { neutral } = this.state;
-    // const { bad } = this.state;
     const total = this.countTotalFeedback();
     const percentage = this.countPositiveFeedbackPercentage();
 
